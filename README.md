@@ -11,4 +11,19 @@ The lack of a unified digital interface makes it difficult for citizens to acces
 The SUVIDHA challenge focuses on designing a smart, citizen-centric kiosk interface that addresses these real-world challenges in urban governance. The goal is to provide a single, self-service touch-based kiosk that integrates multiple civic services across electricity, gas, water, sanitation, and municipal departments. The kiosk should offer clear step-by-step guidance, multilingual support, secure authentication, and real-time information access.
 
 By digitizing common civic interactions through an interactive kiosk, the system aims to reduce dependency on manual counters, improve service turnaround time, enhance transparency, and deliver a consistent user experience across departments. This solution supports the Smart City mission by enabling efficient, accessible, and technology-driven civic service delivery for urban citizens.
+## Problem Understanding
+To design a user-friendly, touch-based kiosk interface for civic utility services.
 
+To provide a unified platform for electricity, gas, water, sanitation, and municipal services.
+
+To enable self-service operations such as bill payments, complaint registration, and service status tracking.
+
+To support multilingual interaction for inclusive access by diverse user groups.
+
+To ensure secure authentication and data protection in compliance with government regulations.
+
+To reduce manual workload and waiting time at civic service counters.
+
+To improve transparency and efficiency in public service delivery.
+
+To design a scalable and modular system that can integrate future services.
