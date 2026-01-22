@@ -1,4 +1,105 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SUVIDHA Civic Services Kiosk</title>
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>SUVIDHA – Smart Urban Virtual Interactive Digital Helpdesk Assistant</h1>
+
+<label>Language:</label>
+<select>
+  <option>English</option>
+  <option>தமிழ்</option>
+  <option>हिंदी</option>
+</select>
+
+<hr>
+
+<div id="home">
+  <h2>Select Service</h2>
+  <button onclick="openSection('electricity')">Electricity Services</button>
+  <button onclick="openSection('gas')">Gas Services</button>
+  <button onclick="openSection('water')">Water & Sanitation</button>
+  <button onclick="openSection('municipal')">Municipal Services</button>
+</div>
+
+<div id="electricity" style="display:none">
+  <h2>Electricity Services</h2>
+  <input type="text" placeholder="Consumer Number"><br><br>
+  <button>View Bill</button>
+  <button>Pay Bill</button>
+  <button>New Connection Request</button>
+  <button onclick="openSection('complaint')">Register Complaint</button><br><br>
+  <button onclick="goHome()">Back</button>
+</div>
+
+<div id="gas" style="display:none">
+  <h2>Gas Services</h2>
+  <input type="text" placeholder="Gas Consumer ID"><br><br>
+  <button>Check Booking Status</button>
+  <button>Pay Gas Bill</button>
+  <button onclick="openSection('complaint')">Register Complaint</button><br><br>
+  <button onclick="goHome()">Back</button>
+</div>
+
+<div id="water" style="display:none">
+  <h2>Water & Sanitation</h2>
+  <input type="text" placeholder="Water Connection ID"><br><br>
+  <button>View Water Bill</button>
+  <button>Pay Bill</button>
+  <button>Report Leakage</button>
+  <button onclick="openSection('complaint')">Register Complaint</button><br><br>
+  <button onclick="goHome()">Back</button>
+</div>
+
+<div id="municipal" style="display:none">
+  <h2>Municipal Services</h2>
+  <button>Property Tax Payment</button>
+  <button>Birth / Death Certificate</button>
+  <button>Waste Management Complaint</button>
+  <button onclick="openSection('complaint')">Register Grievance</button><br><br>
+  <button onclick="goHome()">Back</button>
+</div>
+
+<div id="complaint" style="display:none">
+  <h2>Complaint / Grievance Registration</h2>
+
+  <label>Department:</label>
+  <select>
+    <option>Electricity</option>
+    <option>Gas</option>
+    <option>Water</option>
+    <option>Municipal</option>
+  </select><br><br>
+
+  <textarea placeholder="Describe your issue"></textarea><br><br>
+
+  <label>Upload Document:</label>
+  <input type="file"><br><br>
+
+  <button>Submit Complaint</button>
+
+  <p>Complaint ID will be generated after submission.</p>
+
+  <button onclick="goHome()">Back</button>
+</div>
+
+<hr>
+
+<p>© 2026 C-DAC | SUVIDHA Kiosk Demo</p>
+
+<!-- JavaScript File -->
+<script src="script.js"></script>
+
+</body>
+</html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
