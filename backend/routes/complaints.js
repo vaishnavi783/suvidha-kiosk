@@ -1,10 +1,8 @@
 const express = require("express");
-const { v4: uuidv4 } = require("uuid");
+const router = express.Router();
 const db = require("../db");
 
-const router = express.Router();
-
-/* Register Complaint */
+// Register Complaint
 router.post("/register", (req, res) => {
   const { department, description } = req.body;
 
@@ -12,35 +10,21 @@ router.post("/register", (req, res) => {
     return res.status(400).json({ message: "Missing fields" });
   }
 
-  const complaintId = "CMP-" + uuidv4().slice(0, 8).toUpperCase();
-  const status = "Pending";
-  const createdAt = new Date().toISOString();
+  const complaintId = "CMP" + Math.floor(100000 + Math.random() * 900000);
 
-  db.run(
-    `INSERT INTO complaints VALUES (?, ?, ?, ?, ?)`,
-    [complaintId, department, description, status, createdAt],
+  const sql =
+    "INSERT INTO complaints (complaint_id, department, description, status) VALUES (?, ?, ?, ?)";
+
+  db.query(
+    sql,
+    [complaintId, department, description, "Pending"],
     err => {
       if (err) {
-        return res.status(500).json({ message: "Database error" });
+        console.error(err);
+        return res.status(500).json({ message: "DB Error" });
       }
-      res.json({
-        message: "Complaint registered successfully",
-        complaintId
-      });
-    }
-  );
-});
 
-/* Track Complaint */
-router.get("/status/:id", (req, res) => {
-  db.get(
-    `SELECT * FROM complaints WHERE id = ?`,
-    [req.params.id],
-    (err, row) => {
-      if (!row) {
-        return res.status(404).json({ message: "Complaint not found" });
-      }
-      res.json(row);
+      res.json({ complaintId });
     }
   );
 });
