@@ -27,3 +27,7 @@ To reduce manual workload and waiting time at civic service counters.
 To improve transparency and efficiency in public service delivery.
 
 To design a scalable and modular system that can integrate future services.
+
+# OPEN :suvidha-kiosk.vercel.app/
+
+
