@@ -1,17 +1,14 @@
-const express = require("express");
-const router = express.Router();
-
-router.post("/pay", (req, res) => {
-  const { service, amount } = req.body;
-
-  if (!service || !amount) {
-    return res.status(400).json({ message: "Invalid payment data" });
+{
+  "name": "suvidha-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.2"
   }
-
-  res.json({
-    message: "Payment successful (demo)",
-    transactionId: "TXN" + Math.floor(Math.random() * 1000000)
-  });
-});
-
-module.exports = router;
+}
