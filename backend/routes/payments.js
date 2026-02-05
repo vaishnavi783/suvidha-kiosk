@@ -1,14 +1,15 @@
-{
-  "name": "suvidha-backend",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "mysql2": "^3.9.2"
-  }
-}
+const express = require("express");
+const router = express.Router();
+
+// Mock Payment API
+router.post("/pay", (req, res) => {
+  const transactionId =
+    "TXN" + Math.floor(100000 + Math.random() * 900000);
+
+  res.json({
+    status: "SUCCESS",
+    transactionId
+  });
+});
+
+module.exports = router;
