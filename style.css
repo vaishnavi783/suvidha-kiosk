@@ -1,101 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SUVIDHA Civic Services Kiosk</title>
+/* =========================
+   SUVIDHA – GOVERNMENT KIOSK UI
+   ========================= */
 
-  <!-- CSS File -->
-  <link rel="stylesheet" href="style.css">
-</head>
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
 
-<body>
+/* ===== PAGE BASE ===== */
+body {
+  margin: 0;
+  padding: 24px;
+  background: linear-gradient(180deg, #eef4fb, #ffffff);
+  color: #1c1c1c;
+}
 
-<h1>SUVIDHA – Smart Urban Virtual Interactive Digital Helpdesk Assistant</h1>
+/* ===== HEADER ===== */
+h1 {
+  text-align: center;
+  color: #003c8f; /* Govt Blue */
+  font-size: 30px;
+  margin-bottom: 10px;
+}
 
-<label>Language:</label>
-<select>
-  <option>English</option>
-  <option>தமிழ்</option>
-  <option>हिंदी</option>
-</select>
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #0d6efd, #198754);
+  margin: 24px 0;
+}
 
-<hr>
+/* ===== LANGUAGE BAR ===== */
+label {
+  font-weight: 600;
+  color: #212529;
+}
 
-<div id="home">
-  <h2>Select Service</h2>
-  <button onclick="openSection('electricity')">Electricity Services</button>
-  <button onclick="openSection('gas')">Gas Services</button>
-  <button onclick="openSection('water')">Water & Sanitation</button>
-  <button onclick="openSection('municipal')">Municipal Services</button>
-</div>
+select {
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #adb5bd;
+  margin-left: 10px;
+}
 
-<div id="electricity" style="display:none">
-  <h2>Electricity Services</h2>
-  <input type="text" placeholder="Consumer Number"><br><br>
-  <button>View Bill</button>
-  <button>Pay Bill</button>
-  <button>New Connection Request</button>
-  <button onclick="openSection('complaint')">Register Complaint</button><br><br>
-  <button onclick="goHome()">Back</button>
-</div>
+/* ===== MAIN KIOSK CARDS ===== */
+#home,
+#electricity,
+#gas,
+#water,
+#municipal,
+#complaint {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+  border-top: 6px solid #0d6efd;
+}
 
-<div id="gas" style="display:none">
-  <h2>Gas Services</h2>
-  <input type="text" placeholder="Gas Consumer ID"><br><br>
-  <button>Check Booking Status</button>
-  <button>Pay Gas Bill</button>
-  <button onclick="openSection('complaint')">Register Complaint</button><br><br>
-  <button onclick="goHome()">Back</button>
-</div>
+/* ===== SECTION TITLES ===== */
+h2 {
+  text-align: center;
+  color: #198754; /* Govt Green */
+  font-size: 24px;
+  margin-bottom: 28px;
+}
 
-<div id="water" style="display:none">
-  <h2>Water & Sanitation</h2>
-  <input type="text" placeholder="Water Connection ID"><br><br>
-  <button>View Water Bill</button>
-  <button>Pay Bill</button>
-  <button>Report Leakage</button>
-  <button onclick="openSection('complaint')">Register Complaint</button><br><br>
-  <button onclick="goHome()">Back</button>
-</div>
+/* ===== INPUT FIELDS ===== */
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ced4da;
+  margin-bottom: 14px;
+}
 
-<div id="municipal" style="display:none">
-  <h2>Municipal Services</h2>
-  <button>Property Tax Payment</button>
-  <button>Birth / Death Certificate</button>
-  <button>Waste Management Complaint</button>
-  <button onclick="openSection('complaint')">Register Grievance</button><br><br>
-  <button onclick="goHome()">Back</button>
-</div>
+textarea {
+  min-height: 140px;
+  resize: none;
+}
 
-<div id="complaint" style="display:none">
-  <h2>Complaint / Grievance Registration</h2>
+input[type="file"] {
+  font-size: 15px;
+}
 
-  <label>Department:</label>
-  <select>
-    <option>Electricity</option>
-    <option>Gas</option>
-    <option>Water</option>
-    <option>Municipal</option>
-  </select><br><br>
+/* ===== BUTTONS (TOUCH FRIENDLY) ===== */
+button {
+  width: 100%;
+  padding: 20px;
+  margin: 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #0d6efd, #0b5ed7);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
-  <textarea placeholder="Describe your issue"></textarea><br><br>
+/* Hover feedback */
+button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #084298, #052c65);
+}
 
-  <label>Upload Document:</label>
-  <input type="file"><br><br>
+/* ===== SUBMIT COMPLAINT (HIGHLIGHT) ===== */
+#submitComplaint {
+  background: linear-gradient(135deg, #198754, #146c43);
+}
 
-  <button>Submit Complaint</button>
+#submitComplaint:hover {
+  background: linear-gradient(135deg, #146c43, #0f5132);
+}
 
-  <p>Complaint ID will be generated after submission.</p>
+/* ===== BACK BUTTON ===== */
+button[onclick*="goHome"] {
+  background: linear-gradient(135deg, #6c757d, #495057);
+}
 
-  <button onclick="goHome()">Back</button>
-</div>
+button[onclick*="goHome"]:hover {
+  background: linear-gradient(135deg, #495057, #343a40);
+}
 
-<hr>
+/* ===== FOOTER ===== */
+p {
+  text-align: center;
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: 30px;
+}
 
-<p>© 2026 C-DAC | SUVIDHA Kiosk Demo</p>
+/* ===== RESPONSIVE KIOSK MODE ===== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
 
-<!-- JavaScript File -->
-<script src="script.js"></script>
+  h2 {
+    font-size: 20px;
+  }
 
-</body>
-</html>
+  button {
+    font-size: 16px;
+    padding: 18px;
+  }
+}
