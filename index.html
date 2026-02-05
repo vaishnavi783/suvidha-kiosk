@@ -1,4 +1,4 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,8 +12,9 @@
 
 <h1>SUVIDHA – Smart Urban Virtual Interactive Digital Helpdesk Assistant</h1>
 
+<!-- LANGUAGE SELECT -->
 <label>Language:</label>
-<select>
+<select id="languageSelect">
   <option>English</option>
   <option>தமிழ்</option>
   <option>हिंदी</option>
@@ -83,7 +84,8 @@
   <label>Upload Document:</label>
   <input type="file"><br><br>
 
-  <button>Submit Complaint</button>
+  <!-- IMPORTANT ID ADDED -->
+  <button id="submitComplaint">Submit Complaint</button>
 
   <p>Complaint ID will be generated after submission.</p>
 
@@ -96,31 +98,6 @@
 
 <!-- JavaScript File -->
 <script src="script.js"></script>
-
-</body>
-</html>
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SUVIDHA Kiosk</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <h1>SUVIDHA</h1>
-  <p>Smart Urban Virtual Helpdesk</p>
-
-  <h2>Select Language</h2>
-  <button>English</button>
-  <button>हिन्दी</button>
-  <button>தமிழ்</button>
-
-  <h2>Select Service</h2>
-  <button>Electricity</button>
-  <button>Gas</button>
-  <button>Water</button>
-  <button>Municipal</button>
 
 </body>
 </html>
