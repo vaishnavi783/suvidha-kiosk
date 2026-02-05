@@ -1,19 +1,18 @@
-const sqlite3 = require("sqlite3").verbose();
+const mysql = require("mysql2");
 
-const db = new sqlite3.Database("./suvidha.db", err => {
-  if (err) console.error(err.message);
-  else console.log("Connected to SUVIDHA database.");
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "suvidha_db"
 });
 
-// Create table if not exists
-db.run(`
-  CREATE TABLE IF NOT EXISTS complaints (
-    id TEXT PRIMARY KEY,
-    department TEXT,
-    description TEXT,
-    status TEXT,
-    created_at TEXT
-  )
-`);
+db.connect(err => {
+  if (err) {
+    console.error("DB Connection Failed:", err);
+  } else {
+    console.log("MySQL Connected");
+  }
+});
 
 module.exports = db;
